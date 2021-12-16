@@ -14,7 +14,7 @@ const app = new Vue(
       methods: {
         nextPhoto: function() {
             this.counter += 1;
-            if (this.counter > this.imgs.length -1) {
+            if (this.counter == this.imgs.length) {
                 this.counter = 0;
             }
         },

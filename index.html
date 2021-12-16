@@ -15,17 +15,17 @@
 <body>
   <div id="app" class="container">
     <div class="slider-wrapper">
-      <div class="prev" @click="nextPhoto">
+      <div class="prev" @click="prevPhoto">
         <i class="fas fa-angle-left"></i>
       </div>
       <div class="images">
-        <img :src="`images/${imgs[counter]}`">
+        <img :src="`images/${imgs[counter]}`"> {{ counter }}
       </div>
       <div class="next" @click="nextPhoto">
         <i class="fas fa-angle-right"></i>
       </div>
       <div class="nav">
-        <i class="fas fa-circle" v-for="index in imgs.length"></i>
+        <i class="fas fa-circle" v-for="(img,index) in imgs" :class="(counter == index) ? 'active' : ''"></i>
       </div>
     </div>
   </div>
