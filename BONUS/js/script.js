@@ -24,6 +24,10 @@ const app = new Vue(
                 this.counter = this.imgs.length-1;
             }
         },
+        cirleClick: function(position) {
+            console.log(position);
+            this.counter = position;
+        }
       }
     }
   );
