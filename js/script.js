@@ -3,7 +3,7 @@ const app = new Vue(
       el: '#app',
       data: {
         counter: 0,
-        image: [
+        imgs: [
             "image1.jpg",
             "image2.jpg",
             "image3.jpg",
@@ -12,8 +12,17 @@ const app = new Vue(
       },
 
       methods: {
-        miaFunzione: function() {
+        nextPhoto: function() {
             this.counter += 1;
+            if (this.counter > this.imgs.length -1) {
+                this.counter = 0;
+            }
+        },
+        prevPhoto: function() {
+            this.counter -= 1;
+            if (this.counter < 0) {
+                this.counter = this.imgs.length-1;
+            }
         }
       }
     }
